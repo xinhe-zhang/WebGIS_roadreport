@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>道路狀況回報系統</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- 引用JQ -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v10.2.1/dist/ol.js"></script> <!-- 引用open layer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.2.1/ol.css"></link><!-- 引用open layer -->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <!-- Include Leaflet CSS and JavaScript -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <!-- Google Map Places API，用來自動輸入地址點位(預設為繁中)-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUr_cC8Umkg_Bl3FIbM0jHrYuIwlZnjgg&libraries=places&language=zh-TW" defer></script>
+
+</head>
+<body>
+    <main>
+        <section id="report-section">
+            <h2>Search address or click on map to report a problem</h2>
+                <!-- 填寫區 -->
+                <form id="report-form" enctype="multipart/form-data">
+                    <p id = "location-select-alert" style="color:red;">You haven't select a loacation.</p>
+                    <label>道路類型</label>
+                    <select id="road-type" name="road-type" required>
+                        <option value="高速公路">高速公路</option>
+                        <option value="省道">省道</option>
+                        <option value="一般道路">一般道路</option>
+                        <option value="人行道">人行道</option>
+                    </select>
+                    
+                    <label>災害類型</label>
+                    <select id="event-type" name="event-type" required>
+                        <option value="道路施工">道路施工</option>
+                        <option value="交通管制">交通管制</option>
+                        <option value="事故">事故</option>
+                        <option value="災變">災變</option>
+                        <option value="阻塞">阻塞</option>
+                        <option value="號誌故障">號誌故障</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    
+                    <label for="happendatetime">發生時間</label>
+                    <input type="datetime-local" id="happendatetime" name="happendatetime" required>                        
+                    
+                    <label for="description">路況描述</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                    
+                    <label for="image">上傳圖片</label>
+                    <div id="drop-zone">
+                        <p>拖曳檔案到此區塊或點擊以上傳</p>
+                        <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+                    </div>
+
+                    <input type="text" id="latitude" style="display: none;"/>
+                    <input type="text" id="longitude" style="display: none;"/>
+
+                    <button type="submit" id="submit-button">回報</button>
+                    </form>
+            <br/>
+        </section>
+    </main>
+</body>
+</html>

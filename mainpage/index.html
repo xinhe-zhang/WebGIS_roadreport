@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Information Reporting System</title>
+	<script src="https://cdn.jsdelivr.net/npm/ol@v10.3.1/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.3.1/ol.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/7c9d85b941.js"></script>
+    <!-- Include Leaflet CSS and JavaScript -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Google Map Places API，用來自動輸入地址點位(預設為繁中)-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUr_cC8Umkg_Bl3FIbM0jHrYuIwlZnjgg&libraries=places&language=zh-TW"defer></script>
+ </head>
+
+ <body>
+    <!-- Top Navigation Bar -->
+    <nav id="navbar">
+		<div class="navbar-header">
+			<a class="navbar-brand">Road Information Reporting System</a>
+		</div>
+        <div id="search-container">
+            <input type="text" id="search-address" placeholder="Search Address">
+            <button id="search-btn">Search</button>
+        </div>
+		<button id="getLocation"><i class="fa-solid fa-location-crosshairs"></i> Current Location</button>
+        <button id="report-btn"><i class="fa-solid fa-plus"></i> Report Event</button>
+    </nav>
+
+    <!-- Map Container -->
+    <div id="map-container">
+	    <div id="map"></div>
+		<div id="coordinate-box">Use current location or click on map</div>
+        <div id="report-page" style="display: none;">
+            <button id="close-report">x</button>
+            <iframe id="report-iframe" src="" frameborder="0"></iframe>
+        </div>        
+	</div>
+	
+    <div id="sidebar">
+        <div id="events-section">
+            <h3>事件類型</h3>
+            <label><input type="checkbox" id="道路施工" checked> 道路施工 </label><img src = "images/construction (1).png" style="width:18px"><br>
+            <label><input type="checkbox" id="交通管制" checked> 交通管制 </label><img src = "images/closedroad.png" style="width:18px"><br>
+            <label><input type="checkbox" id="事故" checked> 事故 </label><img src = "images/caraccident.png" style="width:18px"><br>
+            <label><input type="checkbox" id="災變" checked> 災變 </label><img src = "images/fallingrocks.png" style="width:18px"><br>
+            <label><input type="checkbox" id="阻塞" checked> 阻塞 </label><img src = "images/velocimeter.png" style="width:18px"><br>
+            <label><input type="checkbox" id="號誌故障" checked> 號誌故障 </label><img src = "images/trafficlight.png" style="width:18px"><br>
+            <label><input type="checkbox" id="其他" checked> 其他 </label><img src = "images/caution.png" style="width:18px">
+            <h4>選擇縣市以顯示 CMS 資料<img src="images/information.png" style="width: 18px; vertical-align: middle;"></h4>
+            <small>資訊可變標誌（Changeable Message Sign, 簡稱CMS）為設置於道路兩旁或上方，由相關管理單位透過通訊傳輸網路發佈訊息，提供給用路人路況資訊、交通宣導或相關訊息等。</small><br/>
+            <select id="city-select">
+                <option value="">請選擇縣市</option>
+                <option value="Keelung">基隆市</option>
+                <option value="NewTaipei">新北市</option>
+                <option value="Taipei">台北市</option>
+                <option value="Taoyuan">桃園市</option>
+                <option value="Hsinchu">新竹市</option>
+                <option value="HsinchuCounty">新竹縣</option>
+                <option value="MiaoliCounty">苗栗縣</option>
+                <option value="Taichung">台中市</option>
+                <option value="ChanghuaCounty">彰化縣</option>
+                <option value="NantouCounty">南投縣</option>
+                <option value="YunlinCounty">雲林縣</option>
+                <option value="Chiayi">嘉義市</option>
+                <option value="ChiayiCounty">嘉義縣</option>
+                <option value="Tainan">台南市</option>
+                <option value="Kaohsiung">高雄市</option>
+                <option value="PingtungCounty">屏東縣</option>
+                <option value="TaitungCounty">台東縣</option>
+                <option value="YilanCounty">宜蘭縣</option>
+                <option value="KinmenCounty">金門縣</option>
+            </select>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+ </body>
+ <footer>        
+    <img src = "images/custom_marker.png" style="width:20px"><small>New Location</small>
+    <img src = "images/default_marker.png" style="width:20px"><small>User Uploaded Event</small>
+    <img src = "images/default_marker_check.png" style="width:20px"><small>Resolved Event</small>
+</footer>
+</html>

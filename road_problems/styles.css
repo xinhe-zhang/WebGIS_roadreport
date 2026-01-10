@@ -1,0 +1,195 @@
+/*
+* Noto Sans TC (Chinese_traditional) http://www.google.com/fonts/earlyaccess
+ */
+ @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 100;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+    font-display: fallback;
+    }
+    @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+    font-display: fallback;
+    }
+    @font-face {
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 400;
+        src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+    font-display: fallback;
+    }
+    @font-face {
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 500;
+        src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+    font-display: fallback;
+    }
+    @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+    font-display: fallback;
+    }
+    @font-face {
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 900;
+        src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'),
+            url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+    font-display: fallback;
+    }
+
+
+/* reset all */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Noto Sans TC, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* header */
+header {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* main */
+main {
+    padding: 20px;
+}
+
+/* report-section */
+#report-section {
+    background: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 700px; /* 表單最大寬度 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#report-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* 表單樣式 */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+textarea, select, input, #drop-zone, #description {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+textarea {
+    resize: none;
+}
+
+#drop-zone {
+    padding: 20px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6c757d;
+}
+
+#drop-zone p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#drop-zone:hover {
+    background-color: #ffed49;
+    border-color: 2px dashed #666;
+}
+
+/* 提交按鈕 */
+#submit-button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#submit-button:hover {
+    background: #0056b3;
+}
+
+input #latitude, input #longitude {
+    display: none;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    #report-section {
+        padding: 15px;
+    }
+
+    textarea, select, input, #drop-zone {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #submit-button {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+}
