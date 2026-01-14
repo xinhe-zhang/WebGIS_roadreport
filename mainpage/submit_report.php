@@ -1,18 +1,12 @@
 <?php
 header('Content-Type: application/json');
 
-//電腦內部資料庫
-//$host = 'localhost';
-//$dbname = 'road';
-//$username = 'root';
-//$password = 'Sherry0518';
-//$port = 3306;
 
 //老師的資料庫
 $host = 'db.sgis.tw';
 $dbname = 'traffic';
 $username = 'traffic2024';
-$password = 'webgisisfun';
+$password = 'xxxxx'; # replace this with real pswd
 $port = 3306;
 
 try {

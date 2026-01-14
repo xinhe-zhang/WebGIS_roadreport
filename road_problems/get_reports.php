@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 $host = 'db.sgis.tw';
 $dbname = 'traffic';
 $username = 'traffic2024';
-$password = 'webgisisfun';
+$password = 'xxxxxx'; #replace this with real pswd
 $port = 3306;
 
 try {
